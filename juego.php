@@ -31,7 +31,12 @@ for($i=0; $i<strlen($incognita); $i++){
     <input type="hidden" name="letras[<?php echo $j?>]" value="<?php echo $letras[$j]?>" >
         <br> <?php echo $letras[$j]?> 
         <?php endfor;?>
-    <br><label for="letra">Escriba una letra</label>
-    <input type="text" name="letra" maxlength="1" size="1">
+    <br>
+    <label for="letra">Escriba una letra</label>
+    <select name="letra">
+        <?php for($i= ord('a');$i<=ord('z'); $i++) : ?> 
+        <option value="<?php echo chr($i) ?>"><?php echo chr($i) ?></option>
+     <?php endfor; ?>
+    </select>
     <input type="submit" value="Enviar">
 </form>
